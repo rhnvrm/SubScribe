@@ -1,3 +1,5 @@
+__author__ = 'rhnvrm <hello@rohanverma.net>'
+
 import cv2
 import pysrt
 import argparse
