@@ -14,15 +14,24 @@ def save_new_frame(file, ms, text):
 
 	if success:
 		font = cv2.FONT_HERSHEY_SIMPLEX
+
+		overlay = image.copy()
+
+		cv2.rectangle(overlay, (1, height-15-11), (width-1, height-1), (255,0,0), -1)
+		
+		opacity = 0.4
+
+		cv2.addWeighted(overlay, opacity, image, 1 - opacity, 0, image)
+
 		cv2.putText(image,text,(10,height-10), font, 0.4,(255,255,255),1)
-		cv2.imwrite('frame%03d.jpg' % (ms/1000), image)
+		cv2.imwrite('frame%04d.jpg' % (ms/1000), image)
 		#cv2.imshow('frame%d % (ms)', image)
 	    #cv2.waitKey()	
 
 if __name__ == "__main__":
 
-	subs = pysrt.open('comedian/test.srt')
-	videofile = 'comedian/test.mp4'
+	subs = pysrt.open('art/test.srt')
+	videofile = 'art/test.webm'
 
 	for i in xrange(0, len(subs)):
 		ms = mid(subs[i].start.seconds*1000,subs[i].end.seconds*1000)
