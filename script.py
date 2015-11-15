@@ -1,5 +1,6 @@
 import cv2
 import pysrt
+import argparse
 
 def mid(x,y):
 	return (x+y)/2
@@ -29,9 +30,15 @@ def save_new_frame(file, ms, text):
 	    #cv2.waitKey()	
 
 if __name__ == "__main__":
+	parser = argparse.ArgumentParser()
 
-	subs = pysrt.open('art/test.srt')
-	videofile = 'art/test.webm'
+	parser.add_argument('video', help = 'path to video file')
+	parser.add_argument('sub', help = 'path to sub file')
+
+	args = parser.parse_args()
+
+	subs = pysrt.open(args.sub)
+	videofile = args.video
 
 	for i in xrange(0, len(subs)):
 		ms = mid(subs[i].start.seconds*1000,subs[i].end.seconds*1000)
