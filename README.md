@@ -1,5 +1,5 @@
-# effacious-octo-parakeet
-Think of a name for this
+# SubScribe
+Python Utility to convert your video files to images transcribed with their subtitles.
 
 ##The Idea
 1. Download a video using `youtube-dl https://www.youtube.com/watch?v=PTmCxbcRXs4 --write-auto-sub` 
@@ -26,12 +26,29 @@ optional arguments:
 3. Examples:
 `python script.py samples/a/a.webm samples/a/a.srt`
 
+## Sample Outputs
+
+###Moon Movie
+![Image](samples/moon/selected/frame0577.jpg)
+![Image](samples/moon/selected/frame0631.jpg)
+![Image](samples/moon/selected/frame4188.jpg)
+![Image](samples/moon/selected/frame5041.jpg)
+
+
+
+###Sample Youtube Videos
+![Image](samples/a/output/frame0034.jpg)
+![Image](samples/b/output/frame0055.jpg)
 
 ## Todo
 - [ ] Think of a cool name for the repo.
 - [ ] Add an optional youtube-dl wrapper
 - [ ] Add to pip
-- [ ] Add demos to readme. 
+- [ ] Improve text overlay, make it more visible and allow it to be modified using CLI
+- [.] Add demos to readme.
+- [ ] Add contributing.md
+
+
 
 
 ## Contributing
