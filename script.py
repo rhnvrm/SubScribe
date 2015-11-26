@@ -43,5 +43,7 @@ if __name__ == "__main__":
 	videofile = args.video
 
 	for i in xrange(0, len(subs)):
-		ms = mid(subs[i].start.seconds*1000,subs[i].end.seconds*1000)
+		seconds_start = (subs[i].start.seconds) + (subs[i].start.minutes * 60) + (subs[i].start.hours * 60 * 60)
+		seconds_end   = (subs[i].end.seconds) + (subs[i].end.minutes * 60) + (subs[i].end.hours * 60 * 60)
+		ms = mid(seconds_start*1000,seconds_end*1000)
 		save_new_frame(videofile, ms, str(subs[i].text))
