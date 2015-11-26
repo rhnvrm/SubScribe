@@ -45,7 +45,7 @@ optional arguments:
 - [ ] Add an optional youtube-dl wrapper
 - [ ] Add to pip
 - [ ] Improve text overlay, make it more visible and allow it to be modified using CLI
-- [.] Add demos to readme.
+- [x] Add demos to readme.
 - [ ] Add contributing.md
 
 
